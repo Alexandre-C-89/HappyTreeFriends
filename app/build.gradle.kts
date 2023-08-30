@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -5,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.happytreefriends"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.happytreefriends"
@@ -51,7 +53,7 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
     implementation("androidx.activity:activity-compose:1.7.2")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
@@ -66,4 +68,32 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // Paging Compose
+    implementation ("com.google.accompanist:accompanist-pager:0.28.0")
+    implementation ("com.google.accompanist:accompanist-pager-indicators:0.28.0")
+
+    // Animation Compose
+    //implementation ("com.google.accompanist:accompanist-navigation-animation:0.16.0"
+
+    // Material icons
+    implementation ("androidx.compose.material:material-icons-extended:1.5.0")
+
+    // Responsive Design
+    //implementation "androidx.window:window:1.0.0"
+
+    implementation ("com.google.accompanist:accompanist-drawablepainter:0.30.0" )//0.28.0
+
+    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+    // Android
+    implementation ("androidx.activity:activity-compose:1.7.2")
+    implementation ("androidx.fragment:fragment-ktx:1.6.1")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation ("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
+
+    //------------------------------
+    // Hilt
+    implementation ("com.google.dagger:hilt-android:2.45")
+    compileOnly ("javax.annotation:jsr250-api:1.0")
 }
